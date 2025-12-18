@@ -18,29 +18,27 @@
 
   <p>You scanned a tattoo.</p>
 
-  <button id="playBtn"
-    style="
-      font-size:22px;
-      padding:16px 32px;
-      margin-top:40px;
-      cursor:pointer;
-    ">
-    ▶ Play sound
-  </button>
+ <button id="playBtn">▶ Play Rick Astley</button>
 
-  <audio id="rick" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-  </audio>
+<div id="playerContainer" style="display:none;">
+  <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+    title="Rick Astley - Never Gonna Give You Up"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
 
-  <script>
-    const btn = document.getElementById("playBtn");
-    const audio = document.getElementById("rick");
+<script>
+  const btn = document.getElementById("playBtn");
+  const container = document.getElementById("playerContainer");
 
-    btn.addEventListener("click", () => {
-      audio.play();
-      btn.style.display = "none";
-    });
-  </script>
+  btn.addEventListener("click", () => {
+    container.style.display = "block";
+    btn.style.display = "none";
+  });
+</script>
 
 </body>
 </html>
